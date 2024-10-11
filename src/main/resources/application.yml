@@ -1,0 +1,30 @@
+#어플리케이션 포트
+server:
+  port: 8082
+
+# database 연동 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/account?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useUnicode=true&mysqlEncoding=utp8&zeroDateTimeBehavior=convertToNull
+    username: testuser
+    password: 1234
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_batch_size: 1000
+    hibernate:
+      ddl-auto: create
+
+# jwt.secret.key의 값은 256bit 이상이어야 합니다.
+jwt:
+  secret:
+    key: xH9+M4F9QfF1e3xC0jHqlhbw5hwtAi5Z2W9w1A5n7nE=
+
+
+## mybatis
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  config-location: classpath:mybatis-config.xml
